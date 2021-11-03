@@ -32,13 +32,14 @@ public class TicketQueue {
         }
     }
 
-    public void addTicket(TicketType type) {
+    public Ticket addTicket(TicketType type) {
         int n = tickets.keySet().size();
         if (n != 0) n = (int)tickets.keySet().toArray()[n - 1];
         do {
             n = n + 1;
         } while (tickets.containsKey(n) == true);
         tickets.put(n, new Ticket(n, type));
+        return tickets.get(n);
     }
 
     public Ticket popTicket() {
