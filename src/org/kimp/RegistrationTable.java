@@ -6,11 +6,9 @@ import java.util.GregorianCalendar;
 
 public class RegistrationTable {
     private static final int LUNCH_TIME_H = 15;
-    private static final int LUNCH_TIME_M = 00;
 
     public TicketType [] getAvailableServices() {
-        if ((new GregorianCalendar()).get(Calendar.HOUR_OF_DAY) < LUNCH_TIME_H &&
-            (new GregorianCalendar()).get(Calendar.MINUTE) % 60 < LUNCH_TIME_M) {
+        if ((new GregorianCalendar()).get(Calendar.HOUR_OF_DAY) < LUNCH_TIME_H) {
             return new TicketType[]{TicketType.CARD, TicketType.BUSINESS, TicketType.CREDIT, TicketType.PAYMENT};
         } else return new TicketType[]{TicketType.DOCUMENT};
     }
