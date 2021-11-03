@@ -52,4 +52,17 @@ public class TicketQueue {
             tickets.remove(res.getNumber());
         }
     }
+
+    public Ticket [] getTickets() {
+        return (Ticket[]) tickets.values().toArray();
+    }
+
+    public Ticket popTicket(int number) {
+        if (tickets.containsKey(number) == false) return null;
+        try {
+            return tickets.get(number);
+        } finally {
+            tickets.remove(number);
+        }
+    }
 }
