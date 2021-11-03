@@ -54,7 +54,13 @@ public class TicketQueue {
     }
 
     public Ticket [] getTickets() {
-        return (Ticket[]) tickets.values().toArray();
+        Ticket [] res = new Ticket[tickets.keySet().size()];
+        int counter = 0;
+        for (var key : tickets.keySet()) {
+            res[counter] = tickets.get(key);
+            counter += 1;
+        }
+        return res;
     }
 
     public Ticket popTicket(int number) {
