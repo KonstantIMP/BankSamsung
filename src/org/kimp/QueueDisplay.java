@@ -3,6 +3,7 @@ package org.kimp;
 import java.io.PrintStream;
 import java.util.LinkedList;
 
+
 public class QueueDisplay {
     private LinkedList<ServiceWindow> windows = new LinkedList<>();
     private static PrintStream out = new PrintStream(System.out);

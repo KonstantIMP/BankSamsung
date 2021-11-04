@@ -1,5 +1,8 @@
 package org.kimp;
 
+/**
+ * Unites queue, service window and registration tables
+ */
 public class Bank {
     private QueueDisplay display = new QueueDisplay();
     private ServiceWindow [] serviceWindows;
